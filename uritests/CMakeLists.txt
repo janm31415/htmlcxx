@@ -35,6 +35,6 @@ target_include_directories(uritests
       
 target_link_libraries(uritests
       PRIVATE
-      html
+      htmlcxx
       )
 

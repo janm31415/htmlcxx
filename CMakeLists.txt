@@ -13,8 +13,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 #set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_subdirectory(css)
-add_subdirectory(html)
 add_subdirectory(htmlcxx)
+add_subdirectory(htmlcxx_demo)
 add_subdirectory(tests)
 add_subdirectory(uritests)
 

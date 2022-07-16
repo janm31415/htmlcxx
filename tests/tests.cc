@@ -26,11 +26,11 @@
 #include <iostream>
 #include <fstream>
 #if 0
-#include "html/CharsetConverter.h"
+#include "htmlcxx/CharsetConverter.h"
 #endif
-#include "html/Uri.h"
-#include "html/ParserDom.h"
-#include "html/utils.h"
+#include "htmlcxx/Uri.h"
+#include "htmlcxx/ParserDom.h"
+#include "htmlcxx/utils.h"
 
 using namespace std;
 using namespace htmlcxx;

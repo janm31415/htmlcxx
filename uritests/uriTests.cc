@@ -20,7 +20,7 @@
  * Copyright 2011 David Hoerl
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-#include "html/Uri.h"
+#include "htmlcxx/Uri.h"
 #include <cstdlib>
 #ifdef _WIN32
 extern "C"
@@ -38,7 +38,7 @@ using namespace htmlcxx;
 
 
 //#define DEBUG
-#include "html/debug.h"
+#include "htmlcxx/debug.h"
 
 void usage(const char *prg);
 

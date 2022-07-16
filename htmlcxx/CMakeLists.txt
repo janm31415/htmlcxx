@@ -1,35 +1,52 @@
+
 set(HDRS
+_api.h
+ci_string.h
+debug.h
+Extensions.h
+Node.h
+ParserDom.h
+ParserSax.h
+profile.h
+tld.h
+tree.h
+Uri.h
+utils.h
     )
-	
+
 set(SRCS
-main.cpp
+Extensions.cc
+Node.cc
+ParserDom.cc
+ParserSax.cc
+ParserSax.tcc
+Uri.cc
+utils.cc
 )
+
+if (WIN32)
+list(APPEND HDRS wincstring.h)
+endif(WIN32)
 
 if (WIN32)
 set(CMAKE_C_FLAGS_DEBUG "/W4 /MP /GF /RTCu /Od /MDd /Zi")
 set(CMAKE_CXX_FLAGS_DEBUG "/W4 /MP /GF /RTCu /Od /MDd /Zi")
-set(CMAKE_C_FLAGS_RELEASE "/W4 /MP /GF /O2 /Ob2 /Oi /Ot /MD /Zi /DNDEBUG")
-set(CMAKE_CXX_FLAGS_RELEASE "/W4 /MP /GF /O2 /Ob2 /Oi /Ot /MD /Zi /DNDEBUG")
-endif (WIN32)
-
-# general build definitions
-add_definitions(-D_SCL_SECURE_NO_WARNINGS)
-add_definitions(-D_CRT_SECURE_NO_WARNINGS)
+set(CMAKE_C_FLAGS_RELEASE "/W4 /MP /GF /O2 /Ob2 /Oi /Ot /MD /Zi")
+set(CMAKE_CXX_FLAGS_RELEASE "/W4 /MP /GF /O2 /Ob2 /Oi /Ot /MD /Zi")
+endif(WIN32)
 
 
-add_definitions(-DMEMORY_LEAK_TRACKING)
+add_library(htmlcxx SHARED ${HDRS} ${SRCS})
 
-add_executable(htmlcxxtest ${HDRS} ${SRCS})
+
 source_group("Header Files" FILES ${hdrs})
-source_group("Source Files" FILES ${srcs})	
+source_group("Source Files" FILES ${srcs})
 
-target_include_directories(htmlcxxtest
-      PRIVATE
-      ${CMAKE_CURRENT_SOURCE_DIR}/..
-      )
-      
-target_link_libraries(htmlcxxtest
-      PRIVATE
-      html
-      )
-
+target_include_directories(htmlcxx
+  PRIVATE
+  ${CMAKE_CURRENT_SOURCE_DIR}/..
+  )
+  
+target_link_libraries(htmlcxx
+  PRIVATE
+  )	
