@@ -2,7 +2,7 @@ set(HDRS
     )
 	
 set(SRCS
-htmlcxx/main.cpp
+main.cpp
 )
 
 if (WIN32)
