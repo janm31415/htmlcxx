@@ -22,6 +22,10 @@
 
 #include "Uri.h"
 
+#ifdef _WIN32
+#include "wincstring.h"
+#endif
+
 #include <cstdlib>
 #include <cassert>
 #include "tld.h"

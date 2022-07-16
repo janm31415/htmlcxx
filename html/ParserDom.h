@@ -23,6 +23,7 @@
 #ifndef __HTML_PARSER_DOM_H__
 #define __HTML_PARSER_DOM_H__
 
+#include "_api.h"
 #include "ParserSax.h"
 #include "tree.h"
 
@@ -33,11 +34,11 @@ namespace htmlcxx
 		class ParserDom : public ParserSax
 		{
 			public:
-				ParserDom() {}
-				~ParserDom() {}
+				HTML_API ParserDom() {}
+				HTML_API ~ParserDom() {}
 
-				const tree<Node> &parseTree(const std::string &html);
-				const tree<Node> &getTree()
+				HTML_API const tree<Node> &parseTree(const std::string &html);
+				HTML_API const tree<Node> &getTree()
 				{ return mHtmlTree; }
 
 			protected:

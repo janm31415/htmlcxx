@@ -28,6 +28,10 @@
 //#define DEBUG
 #include "debug.h"
 
+#ifdef _WIN32
+#include "wincstring.h"
+#endif
+
 using namespace std;
 using namespace htmlcxx;
 using namespace HTML;

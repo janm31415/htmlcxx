@@ -22,6 +22,10 @@
 
 #include "ParserDom.h"
 
+#ifdef _WIN32
+#include "wincstring.h"
+#endif
+
 #include <iostream>
 #include <vector>
 

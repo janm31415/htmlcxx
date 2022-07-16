@@ -24,7 +24,7 @@
 #define __HTML_PARSER_SAX_H__
 
 #include <string>
-
+#include "_api.h"
 #include "Node.h"
 
 namespace htmlcxx
@@ -34,11 +34,11 @@ namespace htmlcxx
 		class ParserSax
 		{
 			public:
-				ParserSax() : mpLiteral(0), mCdata(false) {}
-				virtual ~ParserSax() {}
+				HTML_API ParserSax() : mpLiteral(0), mCdata(false) {}
+				HTML_API virtual ~ParserSax() {}
 
 				// Parse the html code //
-				void parse(const std::string &html);
+				HTML_API void parse(const std::string &html);
 
 				template <typename _Iterator>
 				void parse(_Iterator begin, _Iterator end);

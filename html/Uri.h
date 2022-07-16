@@ -23,6 +23,7 @@
 #ifndef __HTMLCXX__URI_H__
 #define __HTMLCXX__URI_H__
 
+#include "_api.h"
 #include <string>
 #include <climits>
 #include <stdexcept>
@@ -36,22 +37,22 @@ namespace htmlcxx
 			class Exception : public std::runtime_error
 			{
 				public:
-					Exception(const std::string &arg)
+					HTML_API Exception(const std::string &arg)
 						: std::runtime_error(arg) {}
 			};
 			
-			Uri();
-			Uri(const std::string &uri);
-			~Uri();
+			HTML_API Uri();
+			HTML_API Uri(const std::string &uri);
+			HTML_API ~Uri();
 
-			static std::string encode(const std::string &uri);
-			static std::string decode(const std::string &uri);
+			HTML_API static std::string encode(const std::string &uri);
+			HTML_API static std::string decode(const std::string &uri);
 
-			std::string unparse(int flags = 0) const;
-			Uri absolute(const Uri &base) const;
+			HTML_API std::string unparse(int flags = 0) const;
+			HTML_API Uri absolute(const Uri &base) const;
 
-			std::string canonicalHostname(unsigned int maxDepth = UINT_MAX) const;
-			unsigned int hostnameDepth() const;
+			HTML_API std::string canonicalHostname(unsigned int maxDepth = UINT_MAX) const;
+			HTML_API unsigned int hostnameDepth() const;
 
 			static const unsigned int URI_FTP_DEFAULT_PORT =          21 ; /**< default FTP port */
 			static const unsigned int URI_SSH_DEFAULT_PORT =          22 ; /**< default SSH port */
@@ -80,26 +81,26 @@ namespace htmlcxx
 			const static int REMOVE_DEFAULT_FILENAMES = 64;
 			const static int REMOVE_FRAGMENT = 128;
 
-			std::string scheme() const;
-			void scheme(std::string scheme);
-			std::string user() const;
-			void user(std::string user);
-			std::string password() const;
-			void password(std::string password);
-			std::string hostname() const;
-			void hostname(std::string hostname);
-			std::string path() const;
-			void path(std::string path);
-			std::string query() const;
-			void query(std::string query);
-			std::string fragment() const;
-			void fragment(std::string fragment);
-			unsigned int port() const;
-			void port(unsigned int port);
-			bool existsFragment() const;
-			void existsFragment(bool existsFragment);
-			bool existsQuery() const;
-			void existsQuery(bool existsQuery);
+			HTML_API std::string scheme() const;
+			HTML_API void scheme(std::string scheme);
+			HTML_API std::string user() const;
+			HTML_API void user(std::string user);
+			HTML_API std::string password() const;
+			HTML_API void password(std::string password);
+			HTML_API std::string hostname() const;
+			HTML_API void hostname(std::string hostname);
+			HTML_API std::string path() const;
+			HTML_API void path(std::string path);
+			HTML_API std::string query() const;
+			HTML_API void query(std::string query);
+			HTML_API std::string fragment() const;
+			HTML_API void fragment(std::string fragment);
+			HTML_API unsigned int port() const;
+			HTML_API void port(unsigned int port);
+			HTML_API bool existsFragment() const;
+			HTML_API void existsFragment(bool existsFragment);
+			HTML_API bool existsQuery() const;
+			HTML_API void existsQuery(bool existsQuery);
 		protected:
 			void init(const std::string &uri_str);
 			

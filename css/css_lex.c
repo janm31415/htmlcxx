@@ -1,3 +1,6 @@
+#ifdef _WIN32
+#define YY_NO_UNISTD_H
+#endif
 
 #line 3 "css_lex.c"
 
