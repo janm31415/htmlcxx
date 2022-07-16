@@ -24,11 +24,6 @@ Uri.cc
 utils.cc
 )
 
-if (UNIX)
-list(APPEND HDRS CharsetConverter.h)
-list(APPEND SRCS CharsetConverter.cc)
-endif(UNIX)
-
 if (WIN32)
 list(APPEND HDRS wincstring.h)
 endif(WIN32)

@@ -25,7 +25,7 @@
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
-#ifndef _WIN32
+#if 0
 #include "html/CharsetConverter.h"
 #endif
 #include "html/Uri.h"
@@ -215,7 +215,7 @@ class ParseAttrTest
       }
   };
 
-#ifndef _WIN32
+#if 0
 class CharsetTest
   {
   public:
@@ -269,7 +269,7 @@ int main(int argc, char** argv) {
   ParseAttrTest test3;
   test3.test();
 
-#ifndef _WIN32
+#if 0
   CharsetTest test4;
   test4.test();
 #endif

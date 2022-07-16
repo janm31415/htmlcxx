@@ -29,7 +29,7 @@
 using namespace std;
 using namespace htmlcxx;
 
-CharsetConverter::CharsetConverter(const string &from, const string &to) throw (Exception)
+CharsetConverter::CharsetConverter(const string &from, const string &to) noexcept(false)
 {
 	mIconvDescriptor = iconv_open(to.c_str(), from.c_str());
 	if (mIconvDescriptor == (iconv_t)(-1))
