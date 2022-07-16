@@ -15,6 +15,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_subdirectory(css)
 add_subdirectory(html)
 add_subdirectory(htmlcxx)
+add_subdirectory(tests)
+add_subdirectory(uritests)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
