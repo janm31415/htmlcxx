@@ -36,6 +36,26 @@ using namespace std;
 using namespace htmlcxx;
 using namespace HTML;
 
+namespace
+	{
+	// overriding the built-in isspace function, because it triggers asserts in the case of potential unicode characters
+	bool isspace(char ch)
+		{
+		switch (ch)
+			{
+			case 0x20: 
+			case 0x09:
+			case 0x0a:
+			case 0x0b:
+			case 0x0c:
+			case 0x0d:
+				return true;
+		default:
+			return false;
+			}
+		}
+	}
+
 void Node::parseAttributes() 
 {
 	if (!(this->isTag())) return;
